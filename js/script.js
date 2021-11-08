@@ -29,4 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleNav.classList.toggle('active');
     });
 
+    /* Action Nav link */
+
+    const navLinks = document.querySelectorAll('.nav__links--list__item');
+
+    navLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+            link.classList.toggle('active')
+        })
+    })
+
+
 }, false);

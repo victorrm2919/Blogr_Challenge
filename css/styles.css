@@ -71,9 +71,10 @@ h5 {
 	padding: 1.3rem 1.6rem;
 	font-size: 1.1rem;
 	font-weight: bold;
+	cursor: pointer;
 }
 
-.button-primary {
+.button--primary {
 	background: linear-gradient(
 		90deg,
 		var(--gradient-very-light-red) 0%,
@@ -82,15 +83,31 @@ h5 {
 	color: var(--white);
 }
 
-.button-secondary {
+.button--primary:hover {
+	background: var(--white);
+	border: 2px solid var(--light-red);
+	color: var(--light-red);
+}
+
+.button--secondary {
 	background-color: var(--white);
 	color: var(--light-red);
+}
+
+.button--secondary:hover {
+	background: var(--very-light-red);
+	color: var(--white);
 }
 
 .button--light {
 	background-color: transparent;
 	color: var(--white);
 	border: 2px solid var(--white);
+}
+
+.button--light:hover {
+	background-color: var(--white);
+	color: var(--light-red);
 }
 
 /* Utilities */
@@ -164,7 +181,7 @@ h5 {
 	visibility: hidden;
 }
 
-.nav .nav__logo .nav_logo--img{
+.nav .nav__logo .nav_logo--img {
 	display: block;
 	margin: auto;
 }
@@ -187,7 +204,7 @@ h5 {
 	outline: 0;
 	display: block;
 	border-radius: 1px;
-	background-color:var(--very-dark-blue);
+	background-color: var(--very-dark-blue);
 	margin-bottom: 5px;
 	transition: all 0.2s ease;
 }
@@ -238,10 +255,11 @@ h5 {
 
 .nav .nav__links.active {
 	margin: 1rem 0;
-	height:400px;
+	height: auto;
 	opacity: 1;
 }
 
+.nav .nav__links:not(.active),
 .nav .nav__links:not(.active) .nav__links--list {
 	display: none;
 }
@@ -270,6 +288,15 @@ h5 {
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 1.8rem;
+	cursor: pointer;
+}
+
+.nav
+	.nav__links
+	.nav__links--list
+	.nav__links--list__item.active
+	.nav__links--list__item--sublist {
+	display: block;
 }
 
 .nav
@@ -303,6 +330,7 @@ h5 {
 
 .nav .nav__links .nav__links--list .nav__links--list__item--footer {
 	margin-top: 1.5rem;
+	cursor: pointer;
 }
 
 /* Header */
