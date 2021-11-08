@@ -23,9 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
     /* Menu action */
 
     const toggleNav = document.querySelector('.nav .nav__links');
+    const navListener = document.querySelector('.nav__menu');
+    
 
-    document.querySelector('.nav__menu').addEventListener('click', (e) => {
-        e.target.classList.toggle('closeMenu');
+    navListener.addEventListener('click', (e) => {
+        navListener.classList.toggle('closeMenu');
         toggleNav.classList.toggle('active');
     });
 
