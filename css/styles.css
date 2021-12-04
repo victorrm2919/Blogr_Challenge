@@ -100,14 +100,15 @@ h5 {
 	color: var(--light-red);
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
 	.button--secondary-md {
 		background: var(--white);
 		color: var(--light-red);
 	}
 }
 
-.button--secondary:hover, .button--secondary-md:hover {
+.button--secondary:hover,
+.button--secondary-md:hover {
 	background: var(--very-light-red);
 	color: var(--white);
 }
@@ -199,7 +200,7 @@ h5 {
 	max-width: 1200px;
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
 	.nav .nav__container {
 		justify-content: center;
 		padding: 2rem;
@@ -215,12 +216,15 @@ h5 {
 	background-color: var(--white);
 	width: 50px;
 	height: 50px;
-	padding: 0.75rem;
+	padding: 0.9rem;
 	border-radius: 50%;
 	outline: 0;
 	border: 0;
 	box-shadow: none;
 	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 }
 
 @media (min-width: 768px) {
@@ -234,9 +238,8 @@ h5 {
 	height: 2px;
 	outline: 0;
 	display: block;
-	border-radius: 1px;
+	border-radius: 10px;
 	background-color: var(--very-dark-blue);
-	margin-bottom: 5px;
 	transition: all 0.2s ease;
 }
 
@@ -322,54 +325,41 @@ h5 {
 		margin: 0;
 	}
 
-	.nav .nav__container .nav__links .nav__links--list .nav__links--list__item {
-		position: relative;
-	}
-
-	.nav .nav__container .nav__links .nav__links--list .nav__links--list__item::after {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		background-color: var(--white);
-		width: 100%;
-		height: 2px;
-		opacity: 0;
-		filter: opacity(0);
-		transform: translateX(40%);
-		transition: all 0.3s ease-in-out;
-	}
-
-	.nav .nav__container .nav__links .nav__links--list .nav__links--list__item:hover::after, .nav .nav__container .nav__links .nav__links--list .nav__links--list__item:active::after{
-		transform: translateX(0);
-		opacity: 1;
-		filter: opacity(1);
-	}
-
-	.nav .nav__container .nav__links .nav__links--list .nav__links--list__item:hover > .nav__links--list__item--sublist,
-	.nav .nav__container .nav__links .nav__links--list .nav__links--list__item:hover + .nav__links--list__item--sublist{
+	.nav
+		.nav__container
+		.nav__links
+		.nav__links--list
+		.nav__links--list__item:hover
+		.nav__links--list__item--sublist,
+	.nav
+		.nav__container
+		.nav__links
+		.nav__links--list
+		.nav__links--list__item
+		.nav__links--list__item--sublist:hover {
+		display: block;
 		opacity: 1;
 		height: auto;
+		visibility: visible;
 	}
-
-
 }
 
 .nav
 	.nav__container
 	.nav__links
 	.nav__links--list
-	.nav__links--list__item--separator hr {
+	.nav__links--list__item--separator
+	hr {
 	background-color: var(--grayish-blue);
 	margin: 2rem 0;
 }
 
 @media (min-width: 768px) {
 	.nav
-	.nav__container
-	.nav__links
-	.nav__links--list
-	.nav__links--list__item--separator {
+		.nav__container
+		.nav__links
+		.nav__links--list
+		.nav__links--list__item--separator {
 		display: none;
 	}
 }
@@ -383,7 +373,7 @@ h5 {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-bottom: 1.8rem;
+	margin-bottom: 1.2rem;
 	cursor: pointer;
 }
 
@@ -416,28 +406,29 @@ h5 {
 	.nav__links--list__item
 	.nav__links--list__item--sublist {
 	background-color: var(--grayish-blue);
-	padding: 0.5rem 0;
-	margin: 1.5rem 0;
+	padding: 0.5rem;
+	margin: 0.5rem 0 1.5rem;
 	height: 0;
 	opacity: 0;
+	visibility: hidden;
+	display: none;
+	transition: all 0.3s ease-in-out;
 }
 
 @media (min-width: 768px) {
 	.nav
-	.nav__container
-	.nav__links
-	.nav__links--list
-	.nav__links--list__item
-	.nav__links--list__item--sublist {
+		.nav__container
+		.nav__links
+		.nav__links--list
+		.nav__links--list__item
+		.nav__links--list__item--sublist {
 		position: absolute;
-		top: 10px;
 		width: 150px;
 		max-width: 150px;
-		padding: 0 2rem;
+		margin: 0;
 		border-radius: 5px;
 		background-color: var(--white);
 		color: var(--very-dark-blue);
-		text-align: start;
 	}
 }
 
@@ -449,6 +440,7 @@ h5 {
 	.nav__links--list__item--sublist {
 	height: auto;
 	opacity: 1;
+	visibility: visible;
 }
 
 .nav
@@ -458,10 +450,25 @@ h5 {
 	.nav__links--list__item
 	.nav__links--list__item--sublist
 	.nav__links--list__item--sublist__item {
-	margin: 1.5rem 0;
+	padding: .8rem 1rem;
+	margin: .5rem 0;
+	border-radius: 50px;
 	width: 100%;
-	font-size: .8rem;
+	font-size: 0.8rem;
 	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+@media (min-width: 768px) {
+	.nav
+		.nav__container
+		.nav__links
+		.nav__links--list
+		.nav__links--list__item
+		.nav__links--list__item--sublist
+		.nav__links--list__item--sublist__item:hover {
+		background-color: var(--grayish-blue);
+	}
 }
 
 .nav
@@ -482,30 +489,17 @@ h5 {
 		margin-top: 0;
 	}
 
-	.nav
-		.nav__container
-		.nav__links
-		.nav__links--list
-		li {
-			margin: 0 1rem;
-		}
+	.nav .nav__container .nav__links .nav__links--list > li {
+		margin: 0 1rem;
+	}
 
+	.nav .nav__container .nav__links .nav__links--list > li:nth-child(5) {
+		margin-left: auto;
+	}
 
-	.nav
-		.nav__container
-		.nav__links
-		.nav__links--list
-		li:nth-child(5) {
-			margin-left: auto;
-		}
-
-		.nav
-		.nav__container
-		.nav__links
-		.nav__links--list
-		li:nth-child(6) {
-			margin: auto 1rem auto 2rem;
-		}
+	.nav .nav__container .nav__links .nav__links--list > li:nth-child(6) {
+		margin: auto 1rem auto 2rem;
+	}
 }
 
 /* Header */
