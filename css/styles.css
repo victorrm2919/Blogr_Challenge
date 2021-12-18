@@ -605,7 +605,7 @@ h5 {
 	text-align: center;
 	margin: 5rem auto auto auto;
 	max-width: 1200px;
-	width: 95%;
+	width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -631,7 +631,7 @@ h5 {
 		width: 50%;
 		position: absolute;
 		left: 0;
-		transform: translateX(-40%);
+		transform: translateX(-45%);
 	}
 }
 
@@ -666,10 +666,9 @@ h5 {
 		flex: 0 0 50%;
 		order: 3;
 		margin-left: auto;
-	}
+	}	
 
 	.section .section__img {
-		width: 50%;
 		position: absolute;
 	}
 
@@ -677,7 +676,7 @@ h5 {
 		flex: 0 0 50%;
 		order: 3;
 		right: 0;
-		transform: translateX(40%);
+		transform: translateX(45%);
 	}
 
 	.section.left .section__img {
@@ -685,7 +684,11 @@ h5 {
 		order: 2;
 	}
 
-	.section .section__img img, .section .section__header .section__header--img img {
+	.section .section__img img {
+		max-width: 80%;
+	}
+
+	.section .section__header .section__header--img img {
 		max-width: 120%;
 	}
 }
