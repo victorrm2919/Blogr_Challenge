@@ -955,9 +955,9 @@ h5 {
 .attribution {
 	font-size: 11px;
 	text-align: center;
-	background-color: var(--very-dark-black-blue);
+	background-color: var(--white);
 	color: var(--grayish-blue);
 }
 .attribution a {
-	color: hsl(228, 45%, 44%);
+	color: var(--very-light-red);
 }
